@@ -30,5 +30,19 @@ services:
       - ./logs:/app/logs
     command: ["/bin/bash", "-lc", "scripts/init_ollama.sh && python app.py"]
 
+  reporter:
+    build: .
+    container_name: autotrade-reporter
+    restart: unless-stopped
+    env_file:
+      - .env
+    depends_on:
+      - ollama
+    volumes:
+      - ./data:/app/data
+      - ./reports:/app/reports
+      - ./logs:/app/logs
+    command: ["/bin/bash","-lc","./scripts/start_cron.sh"]
+
 volumes:
   ollama:
