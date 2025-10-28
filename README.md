@@ -1,6 +1,7 @@
-# Welcome to AutoTradingProject
+# Welcome to AutoTrader-Template
 
 > All investment decisions are the responsibility of the investor.
+> This project provides an automated trading framework for research and educational purposes.
 
 ## Overview
 AutoTradingProject is a lightweight, fully containerized automated trading system designed for
